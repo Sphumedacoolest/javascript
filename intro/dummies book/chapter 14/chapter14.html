@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzaria</title>
+</head>
+<body>
+    <h1></h1>
+    <div id="orderForm">
+        <label>
+            Number of Pizzas:
+            <input type="number" id="numPizzas" />
+        </label>
+        <br /><br />
+        <label>
+            Choose Pizza Type:
+            <select id="typePizza">
+                <option value="cheese">Cheese Pizza</option>
+                <option value="pepperoni">Pepperoni Pizza</option>
+                <option value="supreme">Supreme Pizza</option>
+            </select>
+        </label>
+        <br /><br />
+        <label>
+            Delivery City:
+            <select id="deliveryCity">
+                <option value="Anytown">Anytown</option>
+                <option value="Sacramento">Sacramento</option>
+                <option value="Beverly Hills">Beverly Hills</option>
+            </select>
+        </label>
+        <br /><br />
+        <label>
+            Birthday Special?
+            <select id="birthday">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </label>
+        <br /><br />
+        <button type="button" id="placeOrder">Place Order</button>
+    </div>
+    <div id="displayTotal"></div>
+</body>
+</html>
