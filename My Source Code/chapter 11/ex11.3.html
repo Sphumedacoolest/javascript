@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Test Page</h1>
+    <script>
+        function message(msg, event) {
+            console.log(msg, event);
+        }
+
+        document.addEventListener('DOMContentLoaded', function(event) {
+            message('Document Ready', event);
+        });
+
+        window.onload = function(event) {
+            message('Window Ready', event);
+        };
+    </script>
+</body>
+</html>

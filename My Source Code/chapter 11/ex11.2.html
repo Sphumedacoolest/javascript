@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .color {
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="color" id="red">Red</div>
+    <div class="color" id="blue">Blue</div>
+    <div class="color" id="green">Green</div>
+
+    <script>
+        let colors = document.getElementsByClassName('color');
+
+        for (let i = 0; i < colors.length; i++) {
+            colors[i].addEventListener('click', function() {
+                document.body.style.backgroundColor = this.id;
+            });
+        }
+    </script>
+</body>
+</html>

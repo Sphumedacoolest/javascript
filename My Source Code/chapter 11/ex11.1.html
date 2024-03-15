@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            transition: background-color 0.5s ease;
+            color: black;
+            background-color: white;
+        }
+        .dark-mode {
+            color: white;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Click anywhere to toggle dark mode!</h1>
+    <script>
+        let darkMode = false;
+
+        window.onclick = function() {
+            if (!darkMode) {
+                document.body.classList.add('dark-mode');
+                console.log('Dark mode activated');
+                darkMode = true;
+            } else {
+                document.body.classList.remove('dark-mode');
+                console.log('Dark mode deactivated');
+                darkMode = false;
+            }
+        }
+    </script>
+</body>
+</html>
