@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form id="myForm">
+  First name: <input type="text" name="fname"><br>
+  Last name: <input type="text" name="lname"><br>
+  Age: <input type="text" name="age"><br>
+  <input type="submit" value="Submit">
+</form>
+
+<script>
+// Step 2: Select the form as an element object
+var form = document.getElementById('myForm');
+
+// Step 3: Add an submit event listener to the form
+form.addEventListener('submit', function(e) {
+  // Step 4: Set up the default value for error as false
+  var error = false;
+
+  // Step 5: Create a function named checker()
+  function checker(input) {
+    console.log(input.value.length);
+    // Step 6: Add conditions to each of the field values
+    if (input.value == '') {
+      console.log(input.name + ' is empty');
+      error = true;
+    }
+  }
+
+  // Check each field
+  checker(form.fname);
+  checker(form.lname);
+  checker(form.age);
+
+  // Step 8: For the age input value, check the value to see if the age provided is 19 or over
+  if (form.age.value < 19) {
+    console.log('Age must be 19 or over');
+    error = true;
+  }
+
+  // Step 9: At the end of the validation, check if error is true
+  if (error) {
+    e.preventDefault();
+    console.log('Form has errors');
+  }
+});
+</script>
+
+</body>
+</html>

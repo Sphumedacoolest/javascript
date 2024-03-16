@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+    <title>JS Tester</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            background-color: white;
+        }
+        .red {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">1
+        <div id="dragme" draggable="true">
+            Drag Me Please!
+        </div>
+    </div>
+    <div class="box">2</div>
+    <script>
+        // Step 1: Select the draggable element
+        var dragme = document.getElementById('dragme');
+
+        // Step 2: Add an event listener for dragstart
+        dragme.addEventListener('dragstart', function(e) {
+            e.target.style.opacity = '0.5';
+            console.log('Drag start');
+        });
+
+        // Step 3: Add an event listener for dragend
+        dragme.addEventListener('dragend', function(e) {
+            e.target.style.opacity = '';
+            console.log('Drag end');
+        });
+
+        // Step 4: Select all the dropoff boxes
+        var boxes = document.querySelectorAll('.box');
+
+        // Step 5: Add event listeners to all the dropoff boxes
+        boxes.forEach(function(box) {
+            box.addEventListener('dragenter', function(e) {
+                e.target.classList.add('red');
+                console.log('Drag enter');
+            });
+
+            // Step 6: Set dragover
+            box.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                console.log('Drag over');
+            });
+
+            // Step 7: On dragleave, remove the red class
+            box.addEventListener('dragleave', function(e) {
+                e.target.classList.remove('red');
+                console.log('Drag leave');
+            });
+
+            // Step 8: Add the event listener of drop
+            box.addEventListener('drop', function(e) {
+                e.preventDefault();
+                e.target.classList.remove('red');
+                e.target.appendChild(dragme);
+                console.log('Drop');
+            });
+        });
+    </script>
+</body>
+</html>
