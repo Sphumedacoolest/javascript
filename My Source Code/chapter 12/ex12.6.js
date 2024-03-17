@@ -1,11 +1,11 @@
 // Create a function that will take the parameters for cookieName, cookieValue, and the number of days you want to set the cookie.
 function setTestCookie(cookieName, cookieValue, days) {
     if (days) {
-        var date = new Date();
+        let date = new Date();
         date.setTime(date.getTime() + (days*24*60*60*1000));
-        var expires = "; expires=" + date.toUTCString();
+        let expires = "; expires=" + date.toUTCString();
     } else {
-        var expires = "";
+        let expires = "";
     }
     document.cookie = cookieName + "=" + cookieValue + expires + "; path=/";
 }
@@ -18,10 +18,10 @@ function setTestCookies() {
 
 // Create a function to read a cookie value.
 function showTestCookie(cookieName) {
-    var nameEQ = cookieName + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0;i < ca.length;i++) {
-        var c = ca[i];
+    let nameEQ = cookieName + "=";
+    let ca = document.cookie.split(';');
+    for(let i=0;i < ca.length;i++) {
+        let c = ca[i];
         while (c.charAt(0)==' ') c = c.substring(1,c.length);
         if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
     }
