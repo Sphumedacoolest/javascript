@@ -8,3 +8,4 @@ function returnLastArgument() {
 
 // Test the function
 console.log(returnLastArgument('apple', 'banana', 'cherry'));
+
